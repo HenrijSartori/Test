@@ -15,18 +15,18 @@ Quando(/^navegar na area de economia$/) do
 end
 
 Quando(/^comparar o valor do dolar$/) do
-   @dolar = find(:xpath, '//*[@id="cambio"]/ul/li[1]/p[2]').text[9,15]
+   @dolar = find(:xpath, '//*[@id="cambio"]/ul/li[1]/p[2]').text[10,15]
 end 
 
 Entao(/^mostrar a mensagem$/) do
    @valor = '3.20'
-   @dolar[2] = '.'
-   puts @dolar
-   puts @valor
+   @dolar[1] = '.'
+   #puts @dolar
+   #puts @valor
 
   if @dolar <= @valor
- 	 puts 'TESTE ENCERRADO COM SUCESSO!!!'
+ 	 puts @dolar + ' É menor que '+ @valor + ' então: TESTE ENCERRADO COM SUCESSO!!! '
   else
-     puts 'TESTE ENCERRADO COM ERRO!!!'	
+     puts @dolar + ' NÃO É menor que '+ @valor + ' então: TESTE ENCERRADO COM ERRO!!!'	
   end
 end
