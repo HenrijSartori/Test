@@ -21,8 +21,9 @@ Quando(/^comparar o valor do dolar$/) do
 end 
 
 Entao(/^mostrar a mensagem$/) do
-  @valor = 3.20
-  @dolar[1] = '.'
+  @valor = "3,20"
+  @dolar.gsub(/,/,',')
+  #@dolar[1] = '.'
   #puts @dolar
   #puts @valor
 
