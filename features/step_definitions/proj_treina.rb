@@ -17,14 +17,14 @@ Quando(/^navegar na area de economia$/) do
 end
 
 Quando(/^comparar o valor do dolar$/) do
-  @dolar = find(:xpath, '//*[@id="cambio"]/ul/li[1]/p[2]').text[10,15]
+  @dolar = find(:xpath, '//*[@id="cambio"]/ul/li[1]/p[2]').text[9,15]
 end 
 
 Entao(/^mostrar a mensagem$/) do
   @dolar = @dolar.gsub(',','.')
   @valor = 3.20
 
-  if @dolar.to_f <= @valor.to_f
+  if @dolar.to_f <= @valor
      puts "#{@dolar} É menor que R$ #{@valor}, então: TESTE ENCERRADO COM SUCESSO!!!"
   else
      puts "#{@dolar} NÃO É menor que R$ #{@valor}, então: TESTE ENCERRADO COM ERRO!!!"	
