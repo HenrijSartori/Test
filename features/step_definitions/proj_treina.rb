@@ -21,15 +21,14 @@ Quando(/^comparar o valor do dolar$/) do
 end 
 
 Entao(/^mostrar a mensagem$/) do
-  @valor = "3,20"
-  @dolar.gsub(/,/,',')
-  #@dolar[1] = '.'
-  #puts @dolar
-  #puts @valor
+  @dolar = @dolar.gsub(',','.')
+  @valor = 3.20.to_f
+  puts @dolar
+  puts @valor
 
-  if @dolar <= @valor
- 	 puts @dolar + ' É menor que R$ '+ @valor + ' então: TESTE ENCERRADO COM SUCESSO!!! '
+  if @dolar.to_f <= @valor.to_f
+     puts "#{@dolar.to_f} É menor que R$ #{@valor.to_f}, então: TESTE ENCERRADO COM SUCESSO!!!"
   else
-     puts @dolar + ' NÃO É menor que R$ '+ @valor + ' então: TESTE ENCERRADO COM ERRO!!!'	
+     puts "#{@dolar.to_f} NÃO É menor que R$ #{@valor.to_f}, então: TESTE ENCERRADO COM ERRO!!!"	
   end
 end
