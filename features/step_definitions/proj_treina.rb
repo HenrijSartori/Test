@@ -22,13 +22,11 @@ end
 
 Entao(/^mostrar a mensagem$/) do
   @dolar = @dolar.gsub(',','.')
-  @valor = 3.20.to_f
-  puts @dolar
-  puts @valor
+  @valor = 3.20
 
   if @dolar.to_f <= @valor.to_f
-     puts "#{@dolar.to_f} É menor que R$ #{@valor.to_f}, então: TESTE ENCERRADO COM SUCESSO!!!"
+     puts "#{@dolar} É menor que R$ #{@valor}, então: TESTE ENCERRADO COM SUCESSO!!!"
   else
-     puts "#{@dolar.to_f} NÃO É menor que R$ #{@valor.to_f}, então: TESTE ENCERRADO COM ERRO!!!"	
+     puts "#{@dolar} NÃO É menor que R$ #{@valor}, então: TESTE ENCERRADO COM ERRO!!!"	
   end
 end
